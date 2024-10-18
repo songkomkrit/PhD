@@ -11,9 +11,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import tree
 
-dim = 184 # data dimension
-numsel = 10 # total selection
-clf_depth = 5 # tree_depth
+dim = 8 # data dimension
+numsel = 3 # total selection
+clf_depth = 3 # tree_depth
 
 inputdir = f"input/dim-{dim}"
 datfile = f"seltrain20num{dim}each20.csv"

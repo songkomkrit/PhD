@@ -19,13 +19,13 @@
 /*********************************************
  * INPUTS
  *********************************************/ 
-int mdimold = 184;	// dimension			// 4 or 184 or 8 or 4
-int mdimcontold = 66; // continuous dimension	// 2 or 66 or 3 or 2
-//int mdimcat = 118; // categorical dimension	// 2 or 118 or 5 or 2
-int mN = 157681;	// number of instances	// 8 or 157681 or 100 or 100
+int mdimold = 8;	// dimension			// 4 or 184 or 8 or 4
+int mdimcontold = 3; // continuous dimension	// 2 or 66 or 3 or 2
+//int mdimcat = 5; // categorical dimension	// 2 or 118 or 5 or 2
+int mN = 100;	// number of instances	// 8 or 157681 or 100 or 100
 int mn = 4;		// the value of n = (number of classes) - 1		// 1 or 4 or 4
 
-int mseltol = 10;	// given number of total selected cont/cat dimensions (at most)
+int mseltol = 3;	// given number of total selected cont/cat dimensions (at most)
 
 // Initialized UB on number of selected continuous dimensions
 int mselcont = mdimcontold;
@@ -90,15 +90,15 @@ execute {
 main {
 	var ftime = Opl.round((new Date()).getTime()/1000) % 100000; // first timestamp (in seconds)
 	
-	var infilename = "input/proc20enc.csv";			// input filename
-	var varfilename = "input/proc20co3ca3cutinfo.csv";			// variable filename (6 columns)
+	var infilename = "input/seltrain20num8each20.csv";			// input filename
+	var varfilename = "input/selproc20num8co2ca2cutinfo.csv";			// variable filename (6 columns)
 	var prefixout = "output/" + ftime + "-";		// prefix of all output files
 	prefixout += infilename.split("/")[1].split(".")[0] + "-";
 
 	// Inputs
 	//var M0 = 500;			// big-M (float)
 	var m0 = 0.01;			// small-m (float)
-	var pcont0 = 3;			// max number of cuts along continuous axis (integer)
+	var pcont0 = 2;			// max number of cuts along continuous axis (integer)
 	var pthreads = 0;		// parallel threads (default: 0 = at most 32 threads)
 	var timelimit = 1;		// whether set Cplex time limit (1 = limit / 0 = not limit)
 	
